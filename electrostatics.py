@@ -387,7 +387,7 @@ class Potential:
             for j in range(x.shape[1]):
                 # pylint: disable=unsupported-assignment-operation
                 z[i, j] = self.magnitude([x[i, j], y[i, j]])
-        # levels = arange(nmin, nmax+0.2, 0.2)
+        levels = arange(zmin, zmax+step, step)
         cmap = pyplot.cm.get_cmap('plasma')
         pyplot.contourf(x, y, z, numpy.arange(zmin, zmax+step, step),
                        linewidths=linewidth, cmap=cmap, linestyles=linestyle, colors='k')
